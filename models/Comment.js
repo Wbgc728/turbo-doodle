@@ -22,12 +22,10 @@ Comment.init(
                 key: 'id',
             },
         },
-        username: {
+        comment_username: {
             type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'username',
-            },
+            allowNull: false,
+
         },
         post_id: {
             type: DataTypes.INTEGER,

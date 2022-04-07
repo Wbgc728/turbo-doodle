@@ -33,12 +33,8 @@ Post.init(
       },
     },
     post_username: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'username',
+      type: DataTypes.STRING,
       },
-    },
   },
   {
     sequelize,
