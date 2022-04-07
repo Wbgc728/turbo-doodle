@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+
+// Get Request for the homepage
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
@@ -27,6 +29,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Get post creation page
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {

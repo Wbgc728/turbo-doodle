@@ -3,6 +3,8 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
+
+// THEN I am taken to the homepage and presented with existing blog posts that include the post title and the date created
 Post.init(
   {
     id: {
@@ -11,7 +13,7 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -23,15 +25,18 @@ Post.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id',
+      },
+    },
+    post_username: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'username',
       },
     },
   },
