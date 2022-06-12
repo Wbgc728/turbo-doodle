@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
-const withAuth = require('../utils/auth');
+
 
 
 // Get Request for the homepage
@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
         },
       ],
     });
@@ -20,9 +19,8 @@ router.get('/', async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', {
+    res.render('allPosts', {
       posts,
-      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -34,18 +32,11 @@ router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
+        User,
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-          include: {
-            model: User,
-            attributes: ['username']
-          }
-        }
+          include: [User],
+        },
       ],
     });
 
