@@ -8,7 +8,6 @@ class User extends Model {
   }
 }
 
-
 // THEN I am prompted to create a username and password
 User.init(
   {
