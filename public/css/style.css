@@ -1,21 +1,11 @@
-:root {
-  --primary: #ccdad1;
-  --secondary: #9caea9;
-  --tertiary: #788585;
-  --light-dark: #6f6866;
-  --dark: #38302e;
-  --border-radius: 0.3rem;
-}
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: var(--primary);
+
   margin: 0;
   padding: 0;
-  font-family: "IBM Plex Sans", sans-serif;
   color: var(--dark);
   line-height: 1.5;
   font-size: 16px;
@@ -33,16 +23,9 @@ h6 {
   line-height: 1.25;
 }
 
-h2 a:visited {
-  color: var(--tertiary);
-}
-
-h2 a {
-  color: var(--primary);
-}
-
 header {
   margin-top: 50px;
+  padding-top: 5%;
 }
 
 main {
@@ -111,20 +94,6 @@ input {
   margin: 0 40px;
 }
 
-.nav-item a {
-  color: var(--primary);
-}
-
-.hero {
-  padding: 3% 4%;
-  background-color: var(--dark);
-  color: var(--primary);
-}
-
-.hero p {
-  max-width: 75%;
-}
-
 .app-title {
   font-size: 3rem;
   background-color: var(--primary);
@@ -148,7 +117,6 @@ input {
   padding: 1.5%;
   border-radius: var(--border-radius);
   background-color: var(--light-dark);
-  color: var(--primary);
   text-decoration: none;
 }
 
@@ -161,27 +129,8 @@ input {
   padding: 1em;
   margin-bottom: .5em;
   background-color: var(--dark);
-  color: var(--primary);
   border-radius: var(--border-radius);
   text-decoration: none;
-}
-
-/* CARDS */
-.card {
-  margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
-}
-
-.card-header {
-  color: var(--primary);
-  background-color: var(--dark);
-  padding: 1%;
-  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-}
-
-.card-body {
-  padding: 1%;
 }
 
 /* FORM */
@@ -201,8 +150,6 @@ input {
   padding: 1%;
   margin: 5px 0;
   font-size: 1.2rem;
-  border: 2px solid var(--light-dark);
-  border-radius: var(--border-radius);
 }
 
 /* HEIGHT / WIDTH UTILS */
